@@ -1,5 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .row 
+    //- .col-sm-8 
+    //-   h1 Faculty
+    .col-sm-4 
+      a(href="/add", class="btn btn-primary float-right" ) Add New Faculty
+  table.table.table-bordered.table-hover
+    thead
+      tr
+        th Title 
+        th Price
+    tbody 
+      each product in products 
+        tr 
+          td=product.title 
+          td=product.price
