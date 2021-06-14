@@ -7,6 +7,7 @@ var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const Product = require('./models/FacultyModel');
 
 var app = express();
 
@@ -38,9 +39,12 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-mongoose.connect('mongodb://localhost/mernstack',{ useNewUrlParser: true ,useUnifiedTopology: true})
+mongoose.connect('mongodb://localhost/mernstack',
+{ useNewUrlParser: true ,
+  useUnifiedTopology: true
+})
 .then(()=>{
-  console.log('Connected');
+  console.log('Connected to assignment');
 })
 .catch(err=>{
   console.log(err.message);
