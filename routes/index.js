@@ -39,7 +39,7 @@ router.post('/edit/:id', async (req, res, next)=> {
   faculty.name = req.body.name;
   faculty.age = req.body.age;
   faculty.email = req.body.email;
-  faculty.phone= req.body['phone[]'] ;
+  faculty.phone= req.body['phone[]'];
   faculty.address={
     'country': req.body.country,
     'city': req.body.city,
