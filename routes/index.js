@@ -12,7 +12,7 @@ router.get('/add', (req, res, next)=> {
   res.render('add', { title: 'Assignment' });
 });
 router.post('/add', (req, res, next)=> {
-  console.log(req.params);
+  console.log(req.body);
   res.render('add', { title: 'Assignment' });
 });
 router.get('/members', (req, res, next)=> {
