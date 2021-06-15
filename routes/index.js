@@ -11,17 +11,16 @@ router.get('/add', (req, res, next)=> {
   res.render('add', { title: 'Assignment' });
 });
 
-router.post('/add', (req, res, next)=> {
+router.post('/add',async (req, res, next)=> {
   faculty = new Faculty(req.body);
-  faculty.phone.push(req.body.phone);
+  faculty.phone= req.body['phone[]'] ;
   faculty.address={
     'country': req.body.country,
     'city': req.body.city,
     'street': req.body.street
   };
-  console.log(req.body);
-  // console.log(faculty);
-  // faculty.save();
+  console.log(faculty);
+  await faculty.save();
   res.redirect('/');
 });
 
@@ -37,8 +36,16 @@ router.get('/edit/:id', async (req, res, next)=> {
 
 router.post('/edit/:id', async (req, res, next)=> {
   faculty = await Faculty.findById(req.params.id);
-  faculty.title = req.body.title;
-  faculty.price = req.body.price;
+  faculty.name = req.body.name;
+  faculty.age = req.body.age;
+  faculty.email = req.body.email;
+  faculty.phone= req.body['phone[]'] ;
+  faculty.address={
+    'country': req.body.country,
+    'city': req.body.city,
+    'street': req.body.street
+  };
+  console.log(faculty);
   await faculty.save();
   res.redirect('/');
 });

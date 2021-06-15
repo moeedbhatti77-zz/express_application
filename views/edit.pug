@@ -21,7 +21,8 @@ block content
         br
         <div class="form-group">
             <label for="phone">Phone</label>
-            <input type="number" class="form-control" id="phone" name="phone" placeholder="Phone" value=#{faculty.phone[0]}>
+            each phone in faculty.phone
+                <input type="number" class="form-control" id="phone" name="phone[]" placeholder="Phone" value=#{phone}>
         </div>
         br
         div 
