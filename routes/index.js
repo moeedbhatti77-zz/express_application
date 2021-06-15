@@ -3,6 +3,7 @@ var router = express.Router();
 var Faculty = require('../models/FacultyModel');
 /* GET home page. */
 router.get('/', async (req, res, next)=> {
+  console.log('working!!');
   faculties = await Faculty.find();
   res.render('index', { faculties });
 });
