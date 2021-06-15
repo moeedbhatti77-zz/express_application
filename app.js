@@ -39,7 +39,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-mongoose.connect('mongodb://localhost/mernstack',
+mongoose.connect('mongodb+srv://dbUser:user123@assignment.oaubb.mongodb.net/assignment',
 { useNewUrlParser: true ,
   useUnifiedTopology: true
 })

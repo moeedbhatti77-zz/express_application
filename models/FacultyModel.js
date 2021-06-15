@@ -1,9 +1,16 @@
 const mongoose = require('mongoose');
 
 facultySchema = mongoose.Schema({
-    title : String,
-    price : Number
+    name : String,
+    age : Number,
+    email: String,
+    address : {
+        street : Number,
+        city : String,
+        country : String
+    },
+    phone : [String]
 });
 
-const Product = mongoose.model('product',facultySchema);
-module.exports = Product;
+const Faculty = mongoose.model('test',facultySchema);
+module.exports = Faculty;

@@ -12,10 +12,20 @@ block content
   table.table.table-bordered.table-hover
     thead
       tr
-        th Title 
-        th Price
+        th Name 
+        th Email
+        th Address 
+        th Age
+        th Phone
+        th Actions
     tbody 
-      each product in products 
+      each faculty in faculties 
         tr 
-          td=product.title 
-          td=product.price
+          td=faculty.name 
+          td=faculty.email
+          td=faculty.address.country+' '+faculty.address.city+' Street # '+faculty.address.street
+          td=faculty.age
+          td=faculty.phone[0]
+          td.mx-auto
+            a(href="/delete/"+faculty._id,class="btn btn-danger") Delete
+            a(href="/edit/"+faculty._id,class="btn btn-info ") Edit
