@@ -25,7 +25,16 @@ block content
           td=faculty.email
           td=faculty.address.country+' '+faculty.address.city+' Street # '+faculty.address.street
           td=faculty.age
-          td=faculty.phone[0]
+          td
+              <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Phone Numbers
+                  <span class="caret"></span>
+                </button>
+                  <ul class="dropdown-menu">
+                    each phone in faculty.phone 
+                      li #{phone}
+                  </ul>
+              </div>
           td.mx-auto
             a(href="/delete/"+faculty._id,class="btn btn-danger") Delete
             a(href="/edit/"+faculty._id,class="btn btn-info ") Edit
