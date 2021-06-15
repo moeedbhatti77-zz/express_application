@@ -4,7 +4,6 @@ var Faculty = require('../models/FacultyModel');
 /* GET home page. */
 router.get('/', async (req, res, next)=> {
   faculties = await Faculty.find();
-  // console.log(faculties);
   res.render('index', { faculties });
 });
 
@@ -13,14 +12,21 @@ router.get('/add', (req, res, next)=> {
 });
 
 router.post('/add', (req, res, next)=> {
-  product = new Faculty(req.body);
-  console.log(product);
-  product.save();
+  faculty = new Faculty(req.body);
+  faculty.phone.push(req.body.phone);
+  faculty.address={
+    'country': req.body.country,
+    'city': req.body.city,
+    'street': req.body.street
+  };
+  console.log(req.body);
+  // console.log(faculty);
+  // faculty.save();
   res.redirect('/');
 });
 
 router.get('/delete/:id', async (req, res, next)=> {
-  product = await Faculty.findByIdAndDelete(req.params.id);
+  faculty = await Faculty.findByIdAndDelete(req.params.id);
   res.redirect('/');
 });
 
@@ -30,10 +36,10 @@ router.get('/edit/:id', async (req, res, next)=> {
 });
 
 router.post('/edit/:id', async (req, res, next)=> {
-  product = await Faculty.findById(req.params.id);
-  product.title = req.body.title;
-  product.price = req.body.price;
-  await product.save();
+  faculty = await Faculty.findById(req.params.id);
+  faculty.title = req.body.title;
+  faculty.price = req.body.price;
+  await faculty.save();
   res.redirect('/');
 });
 

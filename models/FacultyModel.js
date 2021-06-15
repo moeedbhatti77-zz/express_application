@@ -1,14 +1,16 @@
 const mongoose = require('mongoose');
 
+const addressSchema = mongoose.Schema({
+    street : String,
+    city : String,
+    country : String
+});
+
 facultySchema = mongoose.Schema({
     name : String,
     age : Number,
     email: String,
-    address : {
-        street : Number,
-        city : String,
-        country : String
-    },
+    address : {type : addressSchema},
     phone : [String]
 });
 

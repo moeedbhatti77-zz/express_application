@@ -19,10 +19,11 @@ block content
             <input type="email" class="form-control" id="email" name="email" placeholder="Enetr Email">
         </div>
         br
-        <div class="form-group">
+        <div class="form-group phone" >
             <label for="phone">Phone</label>
-            <input type="number" class="form-control" id="phone" name="phone" placeholder="Phone">
+            <input type="number" class="form-control" name="phone[]" placeholder="Phone">
         </div>
+        button.btn.btn-info#add_phone(type='button') Add Phone
         br
         label Address
         <div class="form-group">

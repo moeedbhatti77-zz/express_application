@@ -23,12 +23,11 @@ block content
         tr 
           td=faculty.name 
           td=faculty.email
-          td=faculty.address.country+' '+faculty.address.city+' Street # '+faculty.address.street
+          td='Country :'+faculty.address.country+', City : '+faculty.address.city+', Street # '+faculty.address.street
           td=faculty.age
           td
               <div class="dropdown">
                 <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Phone Numbers
-                  <span class="caret"></span>
                 </button>
                   <ul class="dropdown-menu">
                     each phone in faculty.phone 
