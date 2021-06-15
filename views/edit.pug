@@ -29,11 +29,13 @@ block content
             <input type="email" class="form-control" id="email" name="email" placeholder="Enetr Email" value=#{faculty.email}>
         </div>
         br
-        <div class="form-group">
+        <div class="form-group phone">
             <label for="phone">Phone</label>
             each phone in faculty.phone
                 <input type="number" class="form-control" id="phone" name="phone[]" placeholder="Phone" value=#{phone}>
         </div>
+        br
+        button.btn.btn-info#add_phone(type='button') Add Phone
         br
         div 
             <div class="form-group">

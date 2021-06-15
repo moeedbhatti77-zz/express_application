@@ -2,15 +2,15 @@ extends layout
 
 block content
   .row 
-    .col-sm-8 
+    .col-md-8.mx-auto 
       br
       h1 Faculty
-    .col-sm-4.float-right
+    .col-sm-4.mx-auto 
       br
-      a(href="/add", class="btn btn-primary mx-auto" ) Add New Faculty
+      a(href="/add", class="btn btn-primary" style="float:right") Add New Faculty
   br
-  table.table.table-bordered.table-hover
-    thead
+  table.table.table-dark.table-hover
+    thead.thead-dark
       tr
         th Name 
         th Gender 
@@ -39,5 +39,5 @@ block content
               </div>
           td=faculty.course_code
           td.mx-auto
-            a(href="/delete/"+faculty._id,class="btn btn-danger") Delete
-            a(href="/edit/"+faculty._id,class="btn btn-info ") Edit
+            a(href="/delete/"+faculty._id,class="btn btn-danger" class="p-2 m-1") Delete
+            a(href="/edit/"+faculty._id,class="btn btn-info" class="p-2 m-1") Update
