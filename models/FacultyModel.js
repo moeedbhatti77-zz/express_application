@@ -10,6 +10,8 @@ facultySchema = mongoose.Schema({
     name : String,
     age : Number,
     email: String,
+    gender : String,
+    course_code : String,
     address : {type : addressSchema},
     phone : [String]
 });

@@ -13,15 +13,18 @@ block content
     thead
       tr
         th Name 
+        th Gender 
         th Email
         th Address 
         th Age
         th Phone
+        th Course Code
         th Actions
     tbody 
       each faculty in faculties 
         tr 
           td=faculty.name 
+          td=faculty.gender 
           td=faculty.email
           td='Country :'+faculty.address.country+', City : '+faculty.address.city+', Street # '+faculty.address.street
           td=faculty.age
@@ -34,6 +37,7 @@ block content
                       li #{phone}
                   </ul>
               </div>
+          td=faculty.course_code
           td.mx-auto
             a(href="/delete/"+faculty._id,class="btn btn-danger") Delete
             a(href="/edit/"+faculty._id,class="btn btn-info ") Edit
